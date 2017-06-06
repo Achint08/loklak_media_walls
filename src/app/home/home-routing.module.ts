@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PageNotFoundComponent } from './pagenotfound.component';
+import { HomeComponent } from './home.component';
 
 const routes: Routes = [
 	{
 		path: '',
 		pathMatch: 'full',
-		component: PageNotFoundComponent
+		component: HomeComponent
 	}
 ];
 
@@ -16,4 +16,4 @@ const routes: Routes = [
 	exports: [RouterModule],
 	providers: []
 })
-export class LoklakPageNotFoundRoutingModule { }
+export class HomeRoutingModule { }

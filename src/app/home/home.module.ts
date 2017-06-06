@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoklakPageNotFoundRoutingModule } from './pagenotfound-routing.module';
-import { PageNotFoundComponent } from './pagenotfound.component';
+import { HomeRoutingModule } from './home-routing.module';
+import { HomeComponent } from './home.component';
 
 import { RouterModule } from '@angular/router';
 
@@ -21,11 +21,11 @@ import { RouterModule } from '@angular/router';
 		 */
 		RouterModule,
 
-		LoklakPageNotFoundRoutingModule,
+		HomeRoutingModule,
 	],
 	declarations: [
-		PageNotFoundComponent
+		HomeComponent
 	]
 })
 
-export class PageNotFoundModule { }
+export class HomeModule { }

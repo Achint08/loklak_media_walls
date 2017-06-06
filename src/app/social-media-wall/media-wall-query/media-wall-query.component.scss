@@ -1,0 +1,110 @@
+.container 		{
+  width:400px;
+  margin:30px auto 0;
+	padding-top: 50px;
+}
+
+/* form starting stylings ------------------------------- */
+.group 			  {
+  position:relative;
+}
+input 				{
+  font-size:25px;
+  padding:10px 10px 10px 5px;
+  width:400px;
+  border:none;
+	background: none;
+	border-bottom:1px solid #db6b8b;
+	color:white;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#db6b8b;
+  font-size:25px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#db6b8b;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:400px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#db6b8b;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#db6b8b; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#db6b8b; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#db6b8b; }
+  to 	{ width:0; background:transparent; }
+}
+
+.forward {
+	position: relative;
+	top:-35px;
+	left:180px;
+	color: white;
+}
+
+
+* {
+  box-sizing: border-box;
+}

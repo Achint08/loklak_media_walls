@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { PageNotFoundComponent } from './pagenotfound.component';
+import { HomeComponent } from './Home.component';
 
 describe('Component: Terms', () => {
 	it('should create an instance', () => {
-		const component = new PageNotFoundComponent();
+		const component = new HomeComponent();
 		expect(component).toBeTruthy();
 	});
 });

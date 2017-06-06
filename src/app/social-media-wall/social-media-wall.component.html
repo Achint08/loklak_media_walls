@@ -1,0 +1,19 @@
+<div class="module">
+  <header>
+		<div class="center">
+		<img src="assets/images/cow_150x175.png"
+				alt="loklak Search - Distributed Social Media Message Search Engine"
+				title="loklak Search - Distributed Social Media Message Search Engine"
+	 			width="125px" height="145px">
+    <h1>
+      Loklak Media Walls
+    </h1>
+			<br>
+			<br>
+		<div>
+			<media-wall-query (next)="changestate($event)" *ngIf="state == 1"></media-wall-query>
+			<media-wall-custom *ngIf="state == 2"></media-wall-custom>
+		</div>
+		</div>
+  </header>
+</div>

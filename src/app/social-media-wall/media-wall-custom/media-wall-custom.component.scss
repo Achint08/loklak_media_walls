@@ -1,0 +1,49 @@
+.container 		{
+  width:400px;
+  margin:30px auto 0;
+	padding-top: 50px;
+}
+
+/* form starting stylings ------------------------------- */
+.group 			  {
+  position:relative;
+}
+
+.white {
+	position: relative;
+	bottom: 65px;
+	right: 10px;
+}
+
+.swatch-box {
+	display:inline-block;
+	text-align:center;
+	}
+		.swatch-outer {
+			display:inline-block;
+			width:96px;
+			height:96px;
+			border:4px solid #fff;
+			padding:7px;
+			border-radius:50%;
+			 }
+		.swatch-inner {
+			 width:100%;
+			 height:100%;
+			 background-color:#f00;
+			 border-radius:50%;
+			 position: relative;
+			 bottom: 67px;
+			  }
+		#swatch1 .swatch-inner {
+			background-color:#ffcc11;
+			cursor:pointer;
+			}
+		#swatch2 .swatch-inner {
+			background-color:#ffffff;
+			cursor:pointer;
+			}
+		#swatch3 .swatch-inner {
+			 background-color:#666666;
+			 cursor:pointer;
+			 }

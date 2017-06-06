@@ -4,13 +4,22 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import { JsonpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { reducer } from './reducers';
+import { ApiSearchEffects } from './effects/api-search.effects';
 
 
 import { LoklakAppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { PageNotFoundModule } from './pagenotfound/pagenotfound.module';
+import { HomeModule } from './home/home.module';
+import { SocialMediaWallModule } from './social-media-wall/social-media-wall.module';
+
+import { SearchService } from './services';
 
 @NgModule({
 	declarations: [
@@ -35,7 +44,7 @@ import { PageNotFoundModule } from './pagenotfound/pagenotfound.module';
      * meta-reducer. This returns all providers for an @ngrx/store
      * based application.
      */
-
+		StoreModule.provideStore(reducer),
     /**
      * Store devtools instrument the store retaining past versions of state
      * and recalculating new states. This enables powerful time-travel
@@ -58,42 +67,18 @@ import { PageNotFoundModule } from './pagenotfound/pagenotfound.module';
 		 *
      * See: https://github.com/ngrx/effects/blob/master/docs/api.md#run
      */
+		EffectsModule.run(ApiSearchEffects),
 
 		/**
 		 * Defines the routes at `root` level of the application.
 		 */
 		LoklakAppRoutingModule,
 
-		/**
-		 * Module responsible for `Home Page` of the Application.
-		 */
+		JsonpModule,
 
-
-		/**
-		 * Module responsible for `Feed Page` of the Application.
-		 * Comprises of `SearchHeader` and `FeedSearchResults`.
-		 */
-
-
-		/**
-		 * Module defines the `About Page` of the Loklak Project.
-		 */
-
-		/**
-		 * Module defines the `ContactUs Page` of the FossAsia Team.
-		 */
-
-
-		/**
-		 * Module defines the `TermsAndServices Page` for the Loklak Project.
-		 */
-
-
-		/**
-		/* Module defines the '404 Not found Page' for the Loklak Project.
-		*/
-
-		PageNotFoundModule
+		HomeModule,
+		SocialMediaWallModule,
+		RouterModule
 	],
 	providers: [
 		/**
@@ -106,6 +91,7 @@ import { PageNotFoundModule } from './pagenotfound/pagenotfound.module';
 		/**
 		 * The major service used for making queries to the `Backend Lokalak Server`.
 		 */
+				SearchService
 	],
 	bootstrap: [AppComponent]
 })
